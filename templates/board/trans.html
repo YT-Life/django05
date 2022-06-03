@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block con %}
+    <div class="container mt-5 mb-5" style="font-size: 20px; font-weight: bold;">
+            
+        <h1><b>번역기</b></h1>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="row mt-4">
+                <div class="col-lg-5">
+                    <textarea class="form-control" name="trans1" style="height: 300px; font-size: 40px;" 
+                    placeholder="텍스트 입력"></textarea>
+                </div>
+                <div class="col-lg-2">
+                    <select class="form-select" name="lang1" size="5" aria-label="select example">
+                        <option></option>
+                    </select>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-dark mt-4 mb-3">TRANS</button>
+                    </div>
+                    <select class="form-select" name="lang2" size="5" aria-label="select example">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col-lg-5">
+                    <textarea class="form-control" name="trans2" style="height: 300px; font-size: 40px;" 
+                    disabled>번역</textarea>
+                </div>   
+            </div>
+        </form>
+
+        
+    </div>
+{% endblock %}
