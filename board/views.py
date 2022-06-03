@@ -89,20 +89,20 @@ def index(request):
 
     if kw:
         if cate == "sub":
-            b = Board.objects.filter(subject__startswith = kw)
+            b = Board.objects.filter(subject__startswith = kw).order_by('-pubdate')
         elif cate == "wri":
             try:
                 from acc.models import User
                 u = User.objects.get(username=kw)
-                b = Board.objects.filter(writer=u)
+                b = Board.objects.filter(writer=u).order_by('-pubdate')
             except:
                 b = Board.objects.none()
         elif cate == "con":
-            b = Board.objects.filter(subject__contains = kw)
+            b = Board.objects.filter(subject__contains = kw).order_by('-pubdate')
         else:
-            b = Board.objects.all()
+            b = Board.objects.all().order_by('-pubdate')
     else:
-        b = Board.objects.all()
+        b = Board.objects.all().order_by('-pubdate')
 
     pag = Paginator(b, 4)
 
