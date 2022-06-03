@@ -26,7 +26,7 @@
                         <tr>
                             <th scope="row" class="text-center">{{ bset.start_index|add:forloop.counter0 }}</th>
                             <td class="text-center"><a class="sub" href="{% url 'board:detail' i.id %}">{% if i.hot %}💖{% endif %}{{ i.subject }}</a></td>
-                            <td class="text-center">{{ i.summary }}</td>
+                            <td class="text-center"><a class="sub" href="{% url 'board:detail' i.id %}">{{ i.summary }}</a></td>
                             <td class="text-center">{{ i.writer }}</td>
                             <td class="text-center">{{ i.likey.count }} </td>
                         </tr>
