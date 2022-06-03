@@ -96,8 +96,10 @@
             {% block noauth %}
                 <div class="container mt-5 text-center">
                     <h1><b>해당 페이지는 로그인이 필요합니다</b></h1>
+                    <h1><b>아이디가 없다면 회원가입을 해주세요</b></h1>
                     <div class="mt-5">
                         <a class="btn btn-dark btn-lg" href="{% url 'acc:login' %}">로그인</a>
+                        <a class="btn btn-dark btn-lg" href="{% url 'acc:signup' %}">회원가입</a>
                     </div>
                 </div>
             {% endblock %}
